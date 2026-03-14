@@ -9,18 +9,18 @@ Este repositorio contiene una app Android nativa (Kotlin) con un juego de Tetris
 - Toque en el tercio central: caída rápida (hard drop).
 - Cuando pierdes, toca la pantalla para reiniciar.
 
-## Generar APK
-1. Instala **Android Studio** o una toolchain con:
-   - JDK 17 o JDK 21 (recomendado, no JDK 25)
+## Generar APK (local)
+1. Instala Android Studio (o Android SDK + JDK 17/21).
+2. Asegúrate de tener instalados:
    - Android SDK Platform 34
-   - Build Tools compatibles
-2. Configura `ANDROID_HOME`/`ANDROID_SDK_ROOT`.
-3. Ejecuta:
+   - Android Build-Tools
+3. Desde la raíz del proyecto, ejecuta:
    ```bash
+   export JAVA_HOME=/ruta/a/jdk-21
    gradle assembleDebug
    ```
-4. El APK debug quedará en:
+4. APK generado en:
    `app/build/outputs/apk/debug/app-debug.apk`
 
-## Nota del entorno actual
-En este entorno automatizado no se pudo generar el APK porque Gradle/Kotlin fallan con Java 25 (`IllegalArgumentException: 25.0.1`).
+## Nota de este entorno CI
+Aquí no fue posible generar el APK por restricciones de red del entorno (no puede descargar dependencias de Gradle/Android desde `google()` / `mavenCentral()`).
