@@ -22,5 +22,12 @@ Este repositorio contiene una app Android nativa (Kotlin) con un juego de Tetris
 4. APK generado en:
    `app/build/outputs/apk/debug/app-debug.apk`
 
+
+## Script rápido
+También puedes usar:
+```bash
+./scripts/build_apk.sh
+```
+
 ## Nota de este entorno CI
 Aquí no fue posible generar el APK por restricciones de red del entorno (no puede descargar dependencias de Gradle/Android desde `google()` / `mavenCentral()`).
